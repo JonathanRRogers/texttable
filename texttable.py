@@ -548,7 +548,7 @@ class Texttable:
             for c in cell.split('\n'):
                 try:
                     c = unicode(c, 'utf')
-                except UnicodeDecodeError as strerror:
+                except UnicodeDecodeError, strerror:
                     sys.stderr.write("UnicodeDecodeError exception for string '%s': %s\n" % (c, strerror))
                     c = unicode(c, 'utf', 'replace')
                 array.extend(textwrap.wrap(c, width))
